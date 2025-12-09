@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -25,26 +26,37 @@ const Home = () => {
           </h1>
 
           <h2 className="text-2xl font-semibold mb-8">Our Projects</h2>
+
           <div className="flex flex-wrap justify-center gap-8 md:gap-12 border-b-4 border-b-red-800 pb-12">
             {/* Commercial Project */}
-            <div className="w-full sm:w-[250px] md:w-[300px] lg:w-[540px] h-[400px] md:h-[675px] rounded-lg overflow-hidden">
-              <img
-                className="w-full h-full object-cover rounded-lg"
-                src="/images/comercial.png"
-                alt="Commercial"
-              />
-              <p className="text-lg font-medium mt-2">Commercial</p>
-            </div>
+            <Link
+              to="/commercial"
+              className="block w-full sm:w-[250px] md:w-[300px] lg:w-[540px]"
+            >
+              <div className="h-[400px] md:h-[675px] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
+                <img
+                  className="w-full h-full object-cover rounded-lg"
+                  src="/Images/dr.cabin-1.png"
+                  alt="Commercial image"
+                />
+              </div>
+              <p className="text-xl font-semibold mt-3">Commercial</p>
+            </Link>
 
             {/* Residential Project */}
-            <div className="w-full sm:w-[250px] md:w-[300px] lg:w-[540px] h-[400px] md:h-[675px] rounded-lg overflow-hidden">
-              <img
-                className="w-full h-full object-cover rounded-lg"
-                src=""
-                alt="Residential"
-              />
-              <p className="text-lg font-medium mt-2">Residential</p>
-            </div>
+            <Link
+              to="/residential"
+              className="block w-full sm:w-[250px] md:w-[300px] lg:w-[540px]"
+            >
+              <div className="h-[400px] md:h-[675px] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
+                <img
+                  className="w-full h-full object-cover rounded-lg"
+                  src="/Images/contempLiving-2.png"
+                  alt="Residential"
+                />
+              </div>
+              <p className="text-xl font-semibold mt-3">Residential</p>
+            </Link>
           </div>
         </div>
       </div>
@@ -52,7 +64,7 @@ const Home = () => {
       {/* About Us */}
       <div className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-8">
         <div className="about-logo flex-1">
-          <img src="" alt="WiseWood Logo" className="w-full max-w-md mx-auto" />
+          <img src="/Images/logoViseWood.png" alt="WiseWood Logo" className="w-full max-w-md mx-auto" />
         </div>
         <div className="about-pera flex-1 text-center md:text-left">
           <h3 className="text-2xl font-semibold mb-4">About Us</h3>
@@ -62,64 +74,123 @@ const Home = () => {
             visions. With roots in Brazil and India, we bring a unique,
             international perspective to every project.
           </p>
-          <button className="bg-red-700 text-white px-6 py-2 rounded hover:bg-red-600 transition">
-            Know More
-          </button>
+          <Link to="/aboutUs" className="cursor-pointer">
+            {" "}
+            <button className="bg-red-700 text-white px-6 py-2 rounded cursor-pointer hover:bg-red-600 transition">
+              Know More
+            </button>
+          </Link>
         </div>
       </div>
 
       {/* See All Projects */}
       <div className="see-all bg-red-700 py-12">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-around gap-6 text-center md:text-left">
           <p className="text-white text-2xl md:text-3xl font-light max-w-lg">
-            Introducing Ambience Studio, our ultra-luxury interior design.
+            Introducing Visewood, our ultra-luxury interior design.
           </p>
-          <button className="bg-white text-red-700 px-6 py-2 rounded hover:bg-gray-100 transition">
+          <Link to="/allproject">
+          <button className="bg-white text-red-700 px-6 py-2 rounded hover:bg-gray-100 transition cursor-pointer">
             SEE ALL PROJECTS
-          </button>
+          </button></Link>
         </div>
       </div>
 
       {/* Image Design */}
       <div className="container mx-auto px-4 py-12 flex justify-center">
         <img
-          src="./assets/images/home.png"
+          src="/Images/darkSecret-1.png"
           alt="Design"
           className="w-full max-w-3xl rounded-lg"
         />
       </div>
 
       {/* Our Process */}
-      <div className="container mx-auto px-4 py-16 text-center">
+      <div className="container mx-auto px-4 py-16 text-center border-b-red-900 border-b-3">
         <h3 className="text-3xl md:text-4xl font-light text-red-700 mb-4">
-          Since 2019, we've been delivering premium commercial and residential
-          spaces across India.
+          Since 2019, we've been delivering <br />
+          premium commercial and residential spaces <br /> across India.
         </h3>
         <p className="text-xl mb-12">Our Process</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[1, 2, 3, 4].map((num) => (
-            <div
-              key={num}
-              className="flex flex-col items-center border-b-4 border-r-4 border-red-800 p-4 gap-4 rounded-lg"
-            >
-              <img
-                src="./assets/images/process-i.png"
-                alt="Process"
-                className="w-20 h-auto"
-              />
-              <div className="text-center">
-                <div className="num mb-2">
-                  <p className="border border-red-800 rounded-full px-4 py-2 inline-block">{`0${num}`}</p>
-                </div>
-                <h6 className="font-semibold mb-1">BRIEFING</h6>
-                <p className="text-sm">
-                  BRIEFING, it appears to be part of a process section likely
-                  outlining the steps Ambience Studio follows in a project.
+          <div className="flex flex-col items-center border-b-4 border-r-4 border-red-800 p-4 gap-4 rounded-lg">
+            <img
+              src="/Images/briefing.png"
+              alt="Process"
+              className="w-20 h-auto"
+            />
+            <div className="text-center">
+              <div className="num mb-2">
+                <p className="border border-red-800 rounded-full px-4 py-2 inline-block">
+                  1
                 </p>
               </div>
+              <h6 className="font-semibold mb-1">BRIEFING</h6>
+              <p className="text-sm">
+                BRIEFING, it appears to be part of a process section likely
+                outlining the steps Visewood follows in a project.
+              </p>
             </div>
-          ))}
+          </div>
+          <div className="flex flex-col items-center border-b-4 border-r-4 border-red-800 p-4 gap-4 rounded-lg">
+            <img
+              src="/Images/design.png"
+              alt="Process"
+              className="w-20 h-auto"
+            />
+            <div className="text-center">
+              <div className="num mb-2">
+                <p className="border border-red-800 rounded-full px-4 py-2 inline-block">
+                  2
+                </p>
+              </div>
+              <h6 className="font-semibold mb-1">DESIGN</h6>
+              <p className="text-sm">
+                We translate your vision into detailed layouts and 3D concepts,
+                combining creativity with functionality to shape your ideal
+                space.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center border-b-4 border-r-4 border-red-800 p-4 gap-4 rounded-lg">
+            <img
+              src="/Images/execution.png"
+              alt="Process"
+              className="w-20 h-auto"
+            />
+            <div className="text-center">
+              <div className="num mb-2">
+                <p className="border border-red-800 rounded-full px-4 py-2 inline-block">
+                  3
+                </p>
+              </div>
+              <h6 className="font-semibold mb-1">EXECUTION</h6>
+              <p className="text-sm">
+                Our team ensures seamless project execution with expert
+                supervision, timely coordination, and high-quality workmanship.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center border-b-4 border-r-4 border-red-800 p-4 gap-4 rounded-lg">
+            <img
+              src="/Images/handover.png"
+              alt="Process"
+              className="w-20 h-auto"
+            />
+            <div className="text-center">
+              <div className="num mb-2">
+                <p className="border border-red-800 rounded-full px-4 py-2 inline-block">
+                  4
+                </p>
+              </div>
+              <h6 className="font-semibold mb-1">HANDOVER</h6>
+              <p className="text-sm">
+                Once complete, the space is thoroughly checked and handed
+                over—perfectly finished, ready to move in and enjoy.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -127,11 +198,16 @@ const Home = () => {
       <div className="container mx-auto px-4 py-16 flex flex-col items-center gap-8 border-b-2 border-red-800">
         <h4 className="text-2xl font-semibold">A Seamless Experience</h4>
         <p className="text-center max-w-xl">
-          With Ambience Studio, transforming your space is as smooth an
-          experience as sliding this bar
+          With Visewood, transforming your space is as smooth an experience as
+          sliding this bar
         </p>
-        <img src="" alt="Project" className="w-full max-w-3xl rounded-lg" />
-        <Link to='/allproject'
+        <img
+          src="/Images/contempLiving-2.png"
+          alt="Project"
+          className="w-full max-w-3xl rounded-lg"
+        />
+        <Link
+          to="/allproject"
           className="mt-4 px-6 py-2 border border-black rounded hover:bg-gray-100 transition"
         >
           SEE ALL PROJECTS
@@ -140,18 +216,19 @@ const Home = () => {
 
       {/* Instagram Section */}
       <div className="container mx-auto px-4 py-8 flex justify-between max-w-md">
-        <a
-          href="#"
+        <Link
+          to="/"
           className="text-black font-medium hover:text-red-700 transition"
         >
-          WiseWood.3D
-        </a>
-        <a
-          href="#"
+          ViseWood.3D
+        </Link>
+        <Link
+          to="#"
           className="text-black font-medium hover:text-red-700 transition"
         >
+          <FaInstagram className="text-xl" />
           Follow Now
-        </a>
+        </Link>
       </div>
 
       {/* Contact Us Section */}
@@ -162,14 +239,14 @@ const Home = () => {
         <p className="mb-6">
           Have a question for us? Let’s talk. <br />
           For all project inquiries, please email <br />
-          ambiencestudioinfo@gmail.com with the subject NEW PROJECT
+          visewood@gmail.com with the subject NEW PROJECT
         </p>
-        <a
-          href="#"
+        <Link
+          to="/contact"
           className="bg-white text-red-700 px-6 py-2 rounded hover:bg-gray-100 transition"
         >
           Contact Us
-        </a>
+        </Link>
       </div>
     </section>
   );
