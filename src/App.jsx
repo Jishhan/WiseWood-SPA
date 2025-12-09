@@ -14,6 +14,7 @@ import SenseAndSimplicity from './pages/SenseAndSimplicity'
 import ContenporyLiving from './pages/ContemporyLiving'
 import BigBunglows from './pages/BigBunglows'
 import DarkSecret from './pages/DarkSecret'
+import HospitalLobby from './pages/HospitalLobby'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop';
@@ -38,6 +39,7 @@ const App = () => {
         <Route path='/dark-secret' element={<DarkSecret/>}/>
         <Route path='/big-bunglow' element={<BigBunglows/>}/>
         <Route path='/contenpory-living' element={<ContenporyLiving/>}/>
+        <Route path='/hospitalLobby' element={<HospitalLobby/>}/>
       </Routes>
       <Footer/>
     </>

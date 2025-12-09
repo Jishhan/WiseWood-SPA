@@ -7,7 +7,7 @@ const AllProjectsSection = () => {
     { title: "Contemporary Living", image: "/Images/contempLiving-1.png", link: "/contenpory-living" },
     { title: "Dark Secret", image: "/Images/darkSecret-1.png", link: "/dark-secret" },
     { title: "Sweet Dreams", image: "/Images/sweetDreams-1.png", link: "/sweet-dreams" },
-    { title: "Hospital Lobby", image: "/Images/hospitalLobby-1.png", link: "#" },
+    { title: "Hospital Lobby", image: "/Images/hospitalLobby-1.png", link: "/hospitalLobby" },
     { title: "Dr. Cabin", image: "/Images/dr.cabin-1.png", link: "#" },
     { title: "Private Room", image: "/Images/privateRoom-1.png", link: "#" },
     { title: "Big Bunglow's", image: "/Images/bigBunglows-1.png", link: "/big-bunglow" },

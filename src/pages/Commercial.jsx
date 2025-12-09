@@ -2,7 +2,7 @@ import React from 'react'
 
 const Commercial = () => {
  const projects = [
-    { title: "Hospital Lobby", image: "/Images/hospitalLobby-1.png", link: "#" },
+    { title: "Hospital Lobby", image: "/Images/hospitalLobby-1.png", link: "/hospitalLobby" },
     { title: "Dr. Cabin", image: "/Images/dr.cabin-1.png", link: "#" },
     { title: "Private Room", image: "/Images/privateRoom-1.png", link: "#" },
   ];

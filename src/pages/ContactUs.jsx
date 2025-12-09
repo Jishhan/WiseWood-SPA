@@ -14,6 +14,7 @@ const ContactUs = () => {
             For all project inquiries, email <b />
             email@gmail.com
             <br /> with the subject NEW PROJECT
+            
           </p>
         </div>
 
