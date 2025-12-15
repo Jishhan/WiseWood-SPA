@@ -3,7 +3,7 @@ import React from "react";
 const AllProjectsSection = () => {
   const projects = [
     { title: "Sense and Simplicity", image: "/Images/sense&simplicity-0.png", link: "/sense-&-simplicity" },
-    { title: "Dream Kitchen", image: "/Images/sense&simplicity-0", link: "/dream-kitchen" },
+    { title: "Dream Kitchen", image: "/Images/dreamkitchen-0.png", link: "/dream-kitchen" },
     { title: "Contemporary Living", image: "/Images/contempLiving-1.png", link: "/contenpory-living" },
     { title: "Dark Secret", image: "/Images/darkSecret-1.png", link: "/dark-secret" },
     { title: "Sweet Dreams", image: "/Images/sweetDreams-1.png", link: "/sweet-dreams" },

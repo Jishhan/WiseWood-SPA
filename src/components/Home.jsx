@@ -18,7 +18,7 @@ const Home = () => {
       </main>
 
       {/* Our Projects */}
-      <div className="our-projects-wrap py-16 bg-gray-50">
+      <div className="our-projects-wrap py-16 bg-gray-50 border-b-4 border-b-red-800">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl font-light text-red-700 max-w-3xl mx-auto mb-12">
             Award winning global luxury design company, crafting unique spaces
@@ -27,7 +27,7 @@ const Home = () => {
 
           <h2 className="text-2xl font-semibold mb-8">Our Projects</h2>
 
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12 border-b-4 border-b-red-800 pb-12">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12  pb-12">
             {/* Commercial Project */}
             <Link
               to="/commercial"
