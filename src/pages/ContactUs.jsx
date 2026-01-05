@@ -1,9 +1,70 @@
 import React from "react";
+import emailjs from "@emailjs/browser";
 import { CiLocationOn } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
+import { useState } from "react";
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formBody = new URLSearchParams();
+  formBody.append("name", formData.name);
+  formBody.append("email", formData.email);
+  formBody.append("phone", formData.phone);
+  formBody.append("message", formData.message);
+
+  try {
+    // ✅ Existing Google Sheet code (UNCHANGED)
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbw-DhGP_xBCYg5nsCmP11CqVyJ6GdWqmaHOWa6Z-_0_KnyMoYN1z8YuzJJtLJWwK3JFtA/exec",
+      {
+        method: "POST",
+        body: formBody,
+      }
+    );
+
+    // ✅ NEW: Auto-reply email (ONLY ADDITION)
+    await emailjs.send(
+      "service_tv4ij6i",
+      "template_iu1cqu6",
+      {
+        name: formData.name,
+        email: formData.email,
+      },
+      "4VzG6EjHwszQ0kY_x"
+    );
+
+    alert("Message sent successfully!");
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  } catch (err) {
+    console.error(err);
+    alert("Failed to send");
+  }
+};
   return (
     <div className="wrapper w-full">
       <div className="contactUsWrap p-6 md:p-16 backdrop-brightness-50 bg-[url('/Images/darkSecret-1.png')] bg-cover bg-center bg-no-repeat">
@@ -58,7 +119,7 @@ const ContactUs = () => {
 
           {/* Form Section */}
           <div className="bg-white p-6 md:p-8 rounded-lg shadow-xl w-full max-w-md">
-            <form id="messageFormId" className="w-full">
+            <form onSubmit={handleSubmit} className="w-full">
               <h2 className="text-2xl font-semibold text-red-700 mb-4">
                 Send Message
               </h2>
@@ -66,7 +127,9 @@ const ContactUs = () => {
               <input
                 className="border border-gray-400 mb-3 p-2 w-full rounded"
                 type="text"
-                id="nameId"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Name"
                 required
               />
@@ -74,7 +137,9 @@ const ContactUs = () => {
               <input
                 className="border border-gray-400 mb-3 p-2 w-full rounded"
                 type="email"
-                id="emailId"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Email"
                 required
               />
@@ -82,15 +147,19 @@ const ContactUs = () => {
               <input
                 className="border border-gray-400 mb-3 p-2 w-full rounded"
                 type="text"
-                id="mblNumberId"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder="Phone Number"
                 required
               />
 
               <textarea
                 className="border border-gray-400 mb-4 p-2 w-full rounded h-28"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Message"
-                id="messageId"
                 required
               ></textarea>
 
@@ -106,7 +175,7 @@ const ContactUs = () => {
       </div>
 
       {/* Google Map */}
-      <div className="map mt-10">
+      <div className="mt-10">
         <div id="googleMap" className="w-full h-[350px] md:h-[450px]"></div>
       </div>
     </div>

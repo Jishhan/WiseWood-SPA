@@ -1,10 +1,14 @@
 import React from 'react'
+import ReferrancePage from '../components/ReferrancePage'
 
 const SweetDreams = () => {
   return (
-    <div>
-      SweetDreams
-    </div>
+    <ReferrancePage
+      title="Sweet Dreams"
+      images={[
+        "/Images/sweetDreams-1.png"
+      ]}
+    />
   )
 }
 

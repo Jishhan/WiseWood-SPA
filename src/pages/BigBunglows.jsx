@@ -1,15 +1,14 @@
 import React from 'react'
+import ReferrancePage from '../components/ReferrancePage'
 
 const BigBunglows = () => {
-
-  const projectImage =[
-    {image:""},
-  ];
-
   return (
-    <div>
-      <h2>BigBunglows</h2>
-    </div>
+    <ReferrancePage
+      title="Big Bumglow's"
+      images={[
+        "/Images/bigBunglows-1.png",
+      ]}
+    />
   )
 }
 
