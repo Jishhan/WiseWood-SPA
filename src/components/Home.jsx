@@ -18,9 +18,9 @@ const Home = () => {
       </main>
 
       {/* Our Projects */}
-      <div className="our-projects-wrap py-16 bg-gray-50 border-b-4 border-b-red-800">
+      <div className="our-projects-wrap py-16 bg-gray-50 border-b-4 border-b-[#7D1128]">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-4xl font-light text-red-700 max-w-3xl mx-auto mb-12">
+          <h1 className="text-3xl md:text-4xl font-light text-[#7D1128] max-w-3xl mx-auto mb-12">
             Award winning global luxury design company, crafting unique spaces
             since 2019
           </h1>
@@ -76,7 +76,7 @@ const Home = () => {
           </p>
           <Link to="/aboutUs" className="cursor-pointer">
             {" "}
-            <button className="bg-red-700 text-white px-6 py-2 rounded cursor-pointer hover:bg-red-600 transition">
+            <button className="bg-[#7D1128] text-white px-6 py-2 rounded cursor-pointer hover:bg-[#7d1128f2] transition">
               Know More
             </button>
           </Link>
@@ -84,13 +84,13 @@ const Home = () => {
       </div>
 
       {/* See All Projects */}
-      <div className="see-all bg-red-700 py-12">
+      <div className="see-all bg-[#7D1128] py-12">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-around gap-6 text-center md:text-left">
           <p className="text-white text-2xl md:text-3xl font-light max-w-lg">
             Introducing Visewood, our ultra-luxury interior design.
           </p>
           <Link to="/allproject">
-          <button className="bg-white text-red-700 px-6 py-2 rounded hover:bg-gray-100 transition cursor-pointer">
+          <button className="bg-white text-[#7D1128] px-6 py-2 rounded hover:bg-gray-200 transition cursor-pointer">
             SEE ALL PROJECTS
           </button></Link>
         </div>
@@ -106,15 +106,15 @@ const Home = () => {
       </div>
 
       {/* Our Process */}
-      <div className="container mx-auto px-4 py-16 text-center border-b-red-900 border-b-3">
-        <h3 className="text-3xl md:text-4xl font-light text-red-700 mb-4">
+      <div className="container mx-auto px-4 py-16 text-center border-b-[#7D1128] border-b-3">
+        <h3 className="text-3xl md:text-4xl font-light text-[#7D1128] mb-4">
           Since 2019, we've been delivering <br />
           premium commercial and residential spaces <br /> across India.
         </h3>
-        <p className="text-xl mb-12">Our Process</p>
+        <p className="text-[1.5rem] mb-12">Our Process</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex flex-col items-center border-b-4 border-r-4 border-red-800 p-4 gap-4 rounded-lg">
+          <div className="flex flex-col items-center border-b-4 border-r-4 border-[#7D1128] p-4 gap-4 rounded-lg">
             <img
               src="/Images/briefing.png"
               alt="Process"
@@ -122,7 +122,7 @@ const Home = () => {
             />
             <div className="text-center">
               <div className="num mb-2">
-                <p className="border border-red-800 rounded-full px-4 py-2 inline-block">
+                <p className="border border-[#7D1128] rounded-full px-4 py-2 inline-block">
                   1
                 </p>
               </div>
@@ -133,7 +133,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col items-center border-b-4 border-r-4 border-red-800 p-4 gap-4 rounded-lg">
+          <div className="flex flex-col items-center border-b-4 border-r-4 border-[#7D1128] p-4 gap-4 rounded-lg">
             <img
               src="/Images/design.png"
               alt="Process"
@@ -141,7 +141,7 @@ const Home = () => {
             />
             <div className="text-center">
               <div className="num mb-2">
-                <p className="border border-red-800 rounded-full px-4 py-2 inline-block">
+                <p className="border border-[#7D1128] rounded-full px-4 py-2 inline-block">
                   2
                 </p>
               </div>
@@ -153,7 +153,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col items-center border-b-4 border-r-4 border-red-800 p-4 gap-4 rounded-lg">
+          <div className="flex flex-col items-center border-b-4 border-r-4 border-[#7D1128] p-4 gap-4 rounded-lg">
             <img
               src="/Images/execution.png"
               alt="Process"
@@ -161,7 +161,7 @@ const Home = () => {
             />
             <div className="text-center">
               <div className="num mb-2">
-                <p className="border border-red-800 rounded-full px-4 py-2 inline-block">
+                <p className="border border-[#7D1128] rounded-full px-4 py-2 inline-block">
                   3
                 </p>
               </div>
@@ -172,7 +172,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col items-center border-b-4 border-r-4 border-red-800 p-4 gap-4 rounded-lg">
+          <div className="flex flex-col items-center border-b-4 border-r-4 border-[#7D1128] p-4 gap-4 rounded-lg">
             <img
               src="/Images/handover.png"
               alt="Process"
@@ -180,7 +180,7 @@ const Home = () => {
             />
             <div className="text-center">
               <div className="num mb-2">
-                <p className="border border-red-800 rounded-full px-4 py-2 inline-block">
+                <p className="border border-[#7D1128] rounded-full px-4 py-2 inline-block">
                   4
                 </p>
               </div>
@@ -195,7 +195,7 @@ const Home = () => {
       </div>
 
       {/* All Project Section */}
-      <div className="container mx-auto px-4 py-16 flex flex-col items-center gap-8 border-b-2 border-red-800">
+      <div className="container mx-auto px-4 py-16 flex flex-col items-center gap-8 border-b-2 border-[#7D1128]">
         <h4 className="text-2xl font-semibold">A Seamless Experience</h4>
         <p className="text-center max-w-xl">
           With Visewood, transforming your space is as smooth an experience as
@@ -208,7 +208,7 @@ const Home = () => {
         />
         <Link
           to="/allproject"
-          className="mt-4 px-6 py-2 border border-black rounded hover:bg-gray-100 transition"
+          className="mt-4 text-[#7D1128] px-6 py-2 border border-[#7D1128] rounded hover:bg-gray-100 transition"
         >
           SEE ALL PROJECTS
         </Link>
@@ -232,7 +232,7 @@ const Home = () => {
       </div>
 
       {/* Contact Us Section */}
-      <div className="contact-us-wrapper bg-red-700 text-white text-center py-16 px-4">
+      <div className="contact-us-wrapper bg-[#7D1128] text-white text-center py-16 px-4">
         <h4 className="text-2xl font-semibold mb-4">
           Looking to elevate the aesthetic of your space?
         </h4>

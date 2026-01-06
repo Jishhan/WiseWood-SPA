@@ -25,7 +25,7 @@ const AllProjectsSection = () => {
 
             {/* TEXT SECTION (30%) */}
             <div className="w-full md:w-[30%] text-center md:text-left">
-              <h2 className="text-[30px] font-semibold mb-4">
+              <h2 className="text-[30px] font-semibold mb-4 text-[#7D1128]">
                 {project.title}
               </h2>
 
@@ -33,8 +33,8 @@ const AllProjectsSection = () => {
                 href={project.link}
                 className="
                   inline-block 
-                  border border-[#6b4f3b] 
-                  text-[#6b4f3b] 
+                  border border-[#7D1128] 
+                  text-[#7D1128] 
                   px-5 py-2 
                   rounded-md 
                   text-sm

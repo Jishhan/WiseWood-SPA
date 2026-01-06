@@ -53,7 +53,7 @@ const Service = () => {
   ];
 
   return (
-    <section className=" bg-white">
+    <section className=" bg-white mb-10">
       <div className="w-full h-[500px] overflow-hidden mb-10">
         <img
           src="/Images/darkSecret-1.png"
@@ -64,15 +64,15 @@ const Service = () => {
       <div className="container mx-auto px-4 mb-10">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-semibold mb-4">Our Services</h2>
-          <p className="text-lg text-gray-600 mb-2">
+          <h2 className="text-4xl font-semibold mb-4 text-[#7D1128]">Our Services</h2>
+          <p className="text-lg text-[#7D1128] mb-2">
             We offer complete end-to-end interior design services across the
             hospitality, residential, and commercial sectors.
           </p>
-          <p className="text-xl font-medium text-gray-800">
+          <p className="text-xl font-medium text-[#7D1128]">
             Comprehensive Interior Design Solutions – From Concept to Completion
           </p>
-          <p className="mt-2 text-gray-500">
+          <p className="mt-2 text-[#7D1128]">
             Our end-to-end design services include:
           </p>
         </div>
@@ -83,7 +83,7 @@ const Service = () => {
             <div
               key={index}
               className="
-                border border-red-800
+                border border-[#7D1128]
                 rounded-2xl
                 p-10
                 shadow-sm
@@ -95,10 +95,10 @@ const Service = () => {
                 h-[270px]
               "
             >
-              <h3 className="text-lg text-red-800 font-semibold mb-4">
+              <h3 className="text-lg text-[#7D1128] font-semibold mb-4">
                 {service.title}
               </h3>
-              <p className="text-brown-600 text-sm leading-relaxed">
+              <p className="text-[#7D1128] text-sm leading-relaxed">
                 {service.desc}
               </p>
             </div>
