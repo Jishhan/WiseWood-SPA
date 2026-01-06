@@ -5,7 +5,7 @@ const AboutUs = () => {
  <div class="aboutUsWrap">
         <div class="container">
             <div class="founder">
-                <div class="pera">
+                <div class="pera h-[799px]">
                     <h1>Mahesh Jhadhav</h1>
                     <h2>Founder</h2>
                 </div>
