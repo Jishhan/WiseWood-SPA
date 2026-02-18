@@ -178,7 +178,7 @@ const ContactUs = () => {
         <iframe
           title="Office Location"
           src="https://www.google.com/maps?q=J%20202%20Labham%20Residency%20Scheme%20140%20Indore&output=embed"
-          className="w-full h-[400px] md:h-[450px] shadow-lg border"
+          className="w-full h-[400px] md:h-[450px] shadow-lg"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>

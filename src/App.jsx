@@ -18,6 +18,8 @@ import HospitalLobby from './pages/HospitalLobby'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import DocCabin from './pages/DocCabin'
+import PrivateRoom from './pages/PrivateRoom'
 
 
 const App = () => {
@@ -27,7 +29,7 @@ const App = () => {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/aboutUs' element={<AboutUs/>}/>
+        <Route path='/about-us' element={<AboutUs/>}/>
         <Route path='/contact' element={<ContactUs/>}/>
         <Route path='/blog' element={<Blogs/>}/>
         <Route path='/commercial' element={<Commertial/>}/>
@@ -41,6 +43,8 @@ const App = () => {
         <Route path='/big-bunglow' element={<BigBunglows/>}/>
         <Route path='/contenpory-living' element={<ContenporyLiving/>}/>
         <Route path='/hospitalLobby' element={<HospitalLobby/>}/>
+        <Route path='/dr.cabin' element={<DocCabin/>}/>
+        <Route path='/private-room' element={<PrivateRoom/>}/>
       </Routes>
       <Footer/>
     </>

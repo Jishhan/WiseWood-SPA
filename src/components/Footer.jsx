@@ -19,7 +19,7 @@ const Footer = () => {
             </a>
 
             <p className="text-gray-700 max-w-xs">
-              UG-40, Orbit mall, AB Road, near C21 mall, Indore.
+              Scheme 140, Near Agrawal school, Indore.
             </p>
 
             {/* Social Icons */}

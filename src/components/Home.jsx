@@ -64,7 +64,11 @@ const Home = () => {
       {/* About Us */}
       <div className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-8">
         <div className="about-logo flex-1">
-          <img src="/Images/logoViseWood.png" alt="WiseWood Logo" className="w-full max-w-md mx-auto" />
+          <img
+            src="/Images/logoViseWood.png"
+            alt="WiseWood Logo"
+            className="w-full max-w-md mx-auto"
+          />
         </div>
         <div className="about-pera flex-1 text-center md:text-left">
           <h3 className="text-2xl font-semibold mb-4">About Us</h3>
@@ -90,9 +94,10 @@ const Home = () => {
             Introducing Visewood, our ultra-luxury interior design.
           </p>
           <Link to="/allproject">
-          <button className="bg-white text-[#7D1128] px-6 py-2 rounded hover:bg-gray-200 transition cursor-pointer">
-            SEE ALL PROJECTS
-          </button></Link>
+            <button className="bg-white text-[#7D1128] px-6 py-2 rounded hover:bg-gray-200 transition cursor-pointer">
+              SEE ALL PROJECTS
+            </button>
+          </Link>
         </div>
       </div>
 

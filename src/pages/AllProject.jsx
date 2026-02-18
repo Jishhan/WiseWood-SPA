@@ -2,14 +2,14 @@ import React from "react";
 
 const AllProjectsSection = () => {
   const projects = [
-    { title: "Sense and Simplicity", image: "/Images/sense&simplicity-0.png", link: "/sense-&-simplicity" },
+    { title: "Sense and Simplicity", image: "/Images/sense&simplicity-2.png", link: "/sense-&-simplicity" },
     { title: "Dream Kitchen", image: "/Images/dreamkitchen-0.png", link: "/dream-kitchen" },
     { title: "Contemporary Living", image: "/Images/contempLiving-1.png", link: "/contenpory-living" },
     { title: "Dark Secret", image: "/Images/darkSecret-1.png", link: "/dark-secret" },
     { title: "Sweet Dreams", image: "/Images/sweetDreams-1.png", link: "/sweet-dreams" },
     { title: "Hospital Lobby", image: "/Images/hospitalLobby-1.png", link: "/hospitalLobby" },
-    { title: "Dr. Cabin", image: "/Images/dr.cabin-1.png", link: "#" },
-    { title: "Private Room", image: "/Images/privateRoom-1.png", link: "#" },
+    { title: "Dr. Cabin", image: "/Images/dr.cabin-1.png", link: "/dr.cabin" },
+    { title: "Private Room", image: "/Images/privateRoom-1.png", link: "/private-room" },
     { title: "Big Bunglow's", image: "/Images/bigBunglows-1.png", link: "/big-bunglow" },
   ];
 

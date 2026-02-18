@@ -5,8 +5,8 @@ export default function SenseSimplicity() {
     <ReferrancePage
       title="Sense & Simplicity"
       images={[
-        "/Images/sense&simplicity-0.png",
-        "/Images/sense&simplicity-1.png",
+        "/Images/sense&simplicity-2.png",
+        "/Images/sense&smplicity-1.png",
         "/Images/sense&simplicity-4.png",
         "/Images/sense&simplicity-3.png",
       ]}
