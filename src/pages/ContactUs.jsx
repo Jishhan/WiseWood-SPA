@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { CiLocationOn } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
-import { useState } from "react";
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
+  const defaultForm = {
     name: "",
     email: "",
     phone: "",
     message: "",
-  });
+  };
+
+  const [formData, setFormData] = useState(defaultForm);
+  const [loading, setLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  // Reset on mount
+  useEffect(() => {
+    setFormData(defaultForm);
+    setStatusMessage("");
+    setIsSuccess(false);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -24,6 +34,8 @@ const ContactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setStatusMessage("");
 
     const formBody = new URLSearchParams();
     formBody.append("name", formData.name);
@@ -32,7 +44,6 @@ const ContactUs = () => {
     formBody.append("message", formData.message);
 
     try {
-      // ✅ Existing Google Sheet code (UNCHANGED)
       await fetch(
         "https://script.google.com/macros/s/AKfycbw-DhGP_xBCYg5nsCmP11CqVyJ6GdWqmaHOWa6Z-_0_KnyMoYN1z8YuzJJtLJWwK3JFtA/exec",
         {
@@ -41,7 +52,6 @@ const ContactUs = () => {
         }
       );
 
-      // ✅ NEW: Auto-reply email (ONLY ADDITION)
       await emailjs.send(
         "service_tv4ij6i",
         "template_iu1cqu6",
@@ -52,137 +62,181 @@ const ContactUs = () => {
         "4VzG6EjHwszQ0kY_x"
       );
 
-      alert("Message sent successfully!");
+      setIsSuccess(true);
+      setStatusMessage(
+        "Thank you. Your inquiry has been successfully submitted. We will get back to you shortly."
+      );
 
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
+      setFormData(defaultForm);
+
+      // Auto remove message
+      setTimeout(() => {
+        setStatusMessage("");
+        setIsSuccess(false);
+      }, 4000);
+
     } catch (err) {
-      console.error(err);
-      alert("Failed to send");
+      setIsSuccess(false);
+      setStatusMessage(
+        "Something went wrong. Please try again."
+      );
+
+      setTimeout(() => {
+        setStatusMessage("");
+      }, 4000);
+    } finally {
+      setLoading(false);
     }
   };
+
   return (
-    <div className="wrapper w-full">
-      <div className="contactUsWrap p-6 md:p-16 backdrop-brightness-50 bg-[url('/Images/darkSecret-1.png')] bg-cover bg-center bg-no-repeat">
-        {/* Heading */}
-        <div className="text-center text-white mb-10">
-          <h1 className="mb-4 text-3xl">Contact Us</h1>
-          <p className="text-xl md:text-2xl">
-            For all project inquiries, email <b />
-            email@gmail.com
-            <br /> with the subject NEW PROJECT
-          </p>
-        </div>
+    <div className="w-full">
 
-        {/* Contact Info + Form */}
-        <div className="flex flex-wrap justify-center gap-10 md:gap-20">
-          {/* Left Info Section */}
-          <div className="flex flex-col justify-center gap-8 text-white max-w-sm">
-            {/* Address */}
-            <div className="flex gap-5 items-center">
-              <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
-                <CiLocationOn className="text-3xl text-[#7D1128]" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-semibold">Address</h2>
-                <p>J 202, Labham Residency, Scheme 140, Indore.</p>
-              </div>
-            </div>
+      {/* Background Section */}
+      <div className="relative bg-[url('/Images/darkSecret-1.png')] bg-cover bg-center bg-no-repeat">
 
-            {/* Phone */}
-            <div className="flex gap-5 items-center">
-              <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
-                <IoCallOutline className="text-2xl text-[#7D1128]" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-semibold">Phone</h2>
-                <p>+91 7999650475</p>
-              </div>
-            </div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/30"></div>
 
-            {/* Email */}
-            <div className="flex gap-5 items-center">
-              <div className="w-12 h-12 flex items-center justify-center bg-white rounded-lg p-2">
-                <MdOutlineMailOutline className="text-2xl text-[#7D1128]" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-semibold">Email</h2>
-                <p>email@gmail.com</p>
-              </div>
-            </div>
+        {/* Content */}
+        <div className="relative z-10 p-6 md:p-16">
+
+          {/* Heading */}
+          <div className="text-center text-white mb-16">
+            <h1 className="text-4xl md:text-5xl tracking-wide mb-6">
+              Contact Us
+            </h1>
+
+            <p className="text-lg md:text-xl text-[#EAE6DF] max-w-2xl mx-auto">
+              For all project inquiries, please email{" "}
+              <span className="text-[#A1866F] font-medium">
+                email@gmail.com
+              </span>
+              with the subject <b>NEW PROJECT</b>.
+            </p>
           </div>
 
-          {/* Form Section */}
-          <div className="bg-white p-6 md:p-8 rounded-lg shadow-xl w-full max-w-md">
-            <form onSubmit={handleSubmit} className="w-full">
-              <h2 className="text-2xl font-semibold text-[#7D1128] mb-4">
-                Submit Your Message
-              </h2>
+          {/* Info + Form */}
+          <div className="flex flex-wrap justify-center gap-12 md:gap-24">
 
-              <input
-                className="border border-[#7D1128] mb-3 p-2 w-full rounded"
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Name"
-                required
-              />
+            {/* LEFT CONTACT INFO */}
+            <div className="flex flex-col justify-center gap-10 text-white max-w-sm">
 
-              <input
-                className="border border-[#7D1128] mb-3 p-2 w-full rounded"
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email"
-                required
-              />
+              <div className="flex gap-5 items-center">
+                <div className="w-12 h-12 flex items-center justify-center bg-[#F5F3EF] rounded-lg">
+                  <CiLocationOn className="text-2xl text-[#A1866F]" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-medium">Address</h2>
+                  <p className="text-[#EAE6DF]">
+                    J 202, Labham Residency, Scheme 140, Indore.
+                  </p>
+                </div>
+              </div>
 
-              <input
-                className="border border-[#7D1128] mb-3 p-2 w-full rounded"
-                type="text"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Phone Number"
-                required
-              />
+              <div className="flex gap-5 items-center">
+                <div className="w-12 h-12 flex items-center justify-center bg-[#F5F3EF] rounded-lg">
+                  <IoCallOutline className="text-2xl text-[#A1866F]" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-medium">Phone</h2>
+                  <p className="text-[#EAE6DF]">+91 7999650475</p>
+                </div>
+              </div>
 
-              <textarea
-                className="border border-[#7D1128] mb-4 p-2 w-full rounded h-28"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Message"
-                required
-              ></textarea>
+              <div className="flex gap-5 items-center">
+                <div className="w-12 h-12 flex items-center justify-center bg-[#F5F3EF] rounded-lg">
+                  <MdOutlineMailOutline className="text-2xl text-[#A1866F]" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-medium">Email</h2>
+                  <p className="text-[#EAE6DF]">email@gmail.com</p>
+                </div>
+              </div>
 
-              <button
-                id="sendButton"
-                className="w-full bg-[#7D1128] hover:bg-rose-800 transition text-white p-2 rounded"
-              >
-                Send
-              </button>
-            </form>
+            </div>
+
+            {/* FORM */}
+            <div className="bg-[#F5F3EF] p-8 rounded-sm shadow-2xl w-full max-w-md">
+
+              <form onSubmit={handleSubmit}>
+                <h2 className="text-xl font-medium text-[#1C1C1C] mb-6 tracking-wide">
+                  Submit Your Inquiry
+                </h2>
+
+                <input
+                  className="border border-[#D6CEC3] focus:border-[#A1866F] mb-4 p-3 w-full bg-white outline-none transition"
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Name"
+                  required
+                />
+
+                <input
+                  className="border border-[#D6CEC3] focus:border-[#A1866F] mb-4 p-3 w-full bg-white outline-none transition"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email"
+                  required
+                />
+
+                <input
+                  className="border border-[#D6CEC3] focus:border-[#A1866F] mb-4 p-3 w-full bg-white outline-none transition"
+                  type="text"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Phone Number"
+                  required
+                />
+
+                <textarea
+                  className="border border-[#D6CEC3] focus:border-[#A1866F] mb-6 p-3 w-full bg-white outline-none transition h-28"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Message"
+                  required
+                ></textarea>
+
+                <button
+                  disabled={loading}
+                  className="w-full bg-[#A1866F] hover:bg-[#8C735C] transition text-white py-3 tracking-wide disabled:opacity-70 flex items-center justify-center gap-2"
+                >
+                  {loading && (
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  )}
+                  {loading ? "Sending..." : "Send Message"}
+                </button>
+
+                {statusMessage && (
+                  <p
+                    className={`mt-4 text-sm ${
+                      isSuccess ? "text-green-600" : "text-red-500"
+                    }`}
+                  >
+                    {statusMessage}
+                  </p>
+                )}
+              </form>
+
+            </div>
+
           </div>
         </div>
       </div>
 
       {/* Google Map */}
-      <div className="">
-        <iframe
-          title="Office Location"
-          src="https://www.google.com/maps?q=J%20202%20Labham%20Residency%20Scheme%20140%20Indore&output=embed"
-          className="w-full h-[400px] md:h-[450px] shadow-lg"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
+      <iframe
+        title="Office Location"
+        src="https://www.google.com/maps?q=J%20202%20Labham%20Residency%20Scheme%20140%20Indore&output=embed"
+        className="w-full h-[400px] md:h-[450px]"
+        loading="lazy"
+      ></iframe>
     </div>
   );
 };

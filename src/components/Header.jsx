@@ -1,49 +1,38 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [mobileSubMenuOpen, setMobileSubMenuOpen] = useState(false);
-
   const location = useLocation();
-  const navigate = useNavigate();
   const dropdownRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setDesktopDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  const linkStyle =
+    "relative text-sm tracking-wide text-[#1C1C1C] hover:text-[#A1866F] transition";
 
-  const activeClass =
-    "text-[#7D0928] border-b-2 border-[#7D1128] font-semibold";
-
-  const baseClass =
-    "pb-1 text-[#7D1128] hover:text-[#7D1128] hover:border-b-2 hover:border-[#7D1128]";
+  const activeStyle = "text-[#A1866F]";
 
   return (
-    <header className="w-full bg-white shadow-md">
-      <div className="container mx-auto flex justify-between items-center py-4 px-4 lg:px-8">
-        
+    <header className="w-full bg-[#F5F3EF] border-b border-[#E5DFD7] relative z-50">
+      <div className="max-w-7xl mx-auto flex justify-between items-center py-6 px-6 md:px-16">
+
         {/* LOGO */}
         <Link to="/">
-          <img src="/Images/logoViseWood.png" alt="logo" className="w-32 md:w-40" />
+          <img
+            src="/Images/logoViseWood.png"
+            alt="logo"
+            className="w-32"
+          />
         </Link>
 
         {/* DESKTOP MENU */}
-        <ul className="hidden md:flex items-center gap-8 text-base font-medium">
+        <ul className="hidden md:flex items-center gap-12">
 
           <li>
             <Link
               to="/"
-              className={`${baseClass} ${
-                location.pathname === "/" ? activeClass : ""
+              className={`${linkStyle} ${
+                location.pathname === "/" ? activeStyle : ""
               }`}
             >
               Home
@@ -53,79 +42,76 @@ const Header = () => {
           <li>
             <Link
               to="/about-us"
-              className={`${baseClass} ${
-                location.pathname === "/about-us" ? activeClass : ""
+              className={`${linkStyle} ${
+                location.pathname === "/about-us" ? activeStyle : ""
               }`}
             >
-              About Us
+              About
             </Link>
           </li>
 
           <li>
             <Link
               to="/service"
-              className={`${baseClass} ${
-                location.pathname === "/service" ? activeClass : ""
+              className={`${linkStyle} ${
+                location.pathname === "/service" ? activeStyle : ""
               }`}
             >
-              Our Services
+              Services
             </Link>
           </li>
 
           {/* DESKTOP DROPDOWN */}
-          <li
-            className="relative"
-            ref={dropdownRef}
-            onMouseEnter={() => setDesktopDropdownOpen(true)}
-            onMouseLeave={() => setDesktopDropdownOpen(false)}
-          >
-            <button
-              onClick={() => navigate("/residential")}
-              className={`${baseClass} ${
+          <li className="relative group">
+            <div
+              className={`flex items-center gap-2 cursor-pointer ${linkStyle} ${
                 location.pathname.includes("/residential") ||
                 location.pathname.includes("/commercial")
-                  ? activeClass
+                  ? activeStyle
                   : ""
               }`}
             >
-              Our Projects
-            </button>
+              Projects
+              <span className="text-xs transition-transform duration-300 group-hover:rotate-180">
+                ▼
+              </span>
+            </div>
 
-            {desktopDropdownOpen && (
-              <div className="absolute left-0 top-full bg-white shadow-lg rounded-lg w-44 py-2 z-20">
+            {/* Dropdown */}
+            <div className="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 z-50">
+              <div className="bg-white border border-[#E5DFD7] rounded-md w-48 py-4 shadow-lg">
                 <Link
                   to="/residential"
-                  onClick={() => setDesktopDropdownOpen(false)}
-                  className="block px-4 py-2 hover:bg-gray-100"
+                  className="block px-6 py-2 text-sm text-[#6B6B6B] hover:text-[#A1866F] transition"
                 >
                   Residential
                 </Link>
                 <Link
                   to="/commercial"
-                  onClick={() => setDesktopDropdownOpen(false)}
-                  className="block px-4 py-2 hover:bg-gray-100"
+                  className="block px-6 py-2 text-sm text-[#6B6B6B] hover:text-[#A1866F] transition"
                 >
                   Commercial
                 </Link>
               </div>
-            )}
+            </div>
           </li>
 
           <li>
             <Link
               to="/contact"
-              className={`${baseClass} ${
-                location.pathname === "/contact" ? activeClass : ""
+              className={`${linkStyle} ${
+                location.pathname === "/contact" ? activeStyle : ""
               }`}
             >
               Contact
             </Link>
           </li>
+
         </ul>
 
         {/* MOBILE BUTTON */}
         <button
-          className="md:hidden text-3xl text-[#7D1128]"
+          className="md:hidden text-2xl text-[#1C1C1C]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           ☰
@@ -134,56 +120,57 @@ const Header = () => {
 
       {/* MOBILE MENU */}
       <div
-        className={`md:hidden bg-white shadow-xl transition-all duration-200 overflow-hidden ${
-          mobileMenuOpen ? "max-h-[700px] py-4" : "max-h-0"
+        className={`md:hidden bg-[#F5F3EF] border-t border-[#E5DFD7] transition-all duration-300 overflow-hidden ${
+          mobileMenuOpen ? "max-h-[600px] py-6" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col px-6 gap-4 text-lg font-medium">
+        <ul className="flex flex-col px-8 gap-6 text-base">
 
-          {[
-            { name: "Home", path: "/" },
-            { name: "About Us", path: "/about-us" },
-            { name: "Our Services", path: "/service" },
-          ].map((item) => (
-            <li key={item.path}>
-              <Link
-                to={item.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`text-[#7D1128] ${
-                  location.pathname === item.path ? activeClass : ""
-                }`}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
+          <li>
+            <Link
+              to="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-[#1C1C1C]"
+            >
+              Home
+            </Link>
+          </li>
 
-          {/* MOBILE PROJECTS */}
+          <li>
+            <Link
+              to="/about-us"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-[#1C1C1C]"
+            >
+              About
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/service"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-[#1C1C1C]"
+            >
+              Services
+            </Link>
+          </li>
+
           <li>
             <button
               onClick={() => setMobileSubMenuOpen(!mobileSubMenuOpen)}
-              className="w-full flex justify-between text-[#7D1128]"
+              className="w-full text-left text-[#1C1C1C] flex justify-between"
             >
-              <span
-                className={
-                  location.pathname.includes("/residential") ||
-                  location.pathname.includes("/commercial")
-                    ? activeClass
-                    : ""
-                }
-              >
-                Our Projects
-              </span>
-              <span>{mobileSubMenuOpen ? "▴" : "▾"}</span>
+              Projects
+              <span>{mobileSubMenuOpen ? "–" : "+"}</span>
             </button>
 
             {mobileSubMenuOpen && (
-              <ul className="pl-4 mt-2 space-y-2">
+              <ul className="pl-4 mt-3 space-y-3 text-sm text-[#6B6B6B]">
                 <li>
                   <Link
                     to="/residential"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="hover:text-[#7D1128]"
                   >
                     Residential
                   </Link>
@@ -192,7 +179,6 @@ const Header = () => {
                   <Link
                     to="/commercial"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="hover:text-[#7D1128]"
                   >
                     Commercial
                   </Link>
@@ -205,13 +191,12 @@ const Header = () => {
             <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className={`text-[#7D1128] ${
-                location.pathname === "/contact" ? activeClass : ""
-              }`}
+              className="text-[#1C1C1C]"
             >
               Contact
             </Link>
           </li>
+
         </ul>
       </div>
     </header>

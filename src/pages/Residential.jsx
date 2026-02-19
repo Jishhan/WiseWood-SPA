@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Residential = () => {
- const projects = [
+  const projects = [
     { title: "Sense and Simplicity", image: "/Images/sense&simplicity-2.png", link: "/sense-&-simplicity" },
     { title: "Dream Kitchen", image: "/Images/dreamkitchen-0.png", link: "/dream-kitchen" },
     { title: "Contemporary Living", image: "/Images/contempLiving-1.png", link: "/contenpory-living" },
@@ -12,61 +12,62 @@ const Residential = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-24 bg-[#F5F3EF]">
+      <div className="max-w-7xl mx-auto px-6 md:px-16">
 
         {projects.map((project, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row items-center justify-between gap-10 mb-24"
+            className={`flex flex-col ${
+              index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"
+            } items-center gap-16 mb-32`}
           >
 
-            {/* TEXT SECTION (30%) */}
-            <div className="w-full md:w-[30%] text-center md:text-left">
-              <h2 className="text-[30px] font-semibold mb-4">
+            {/* TEXT SECTION */}
+            <div className="w-full md:w-[35%] text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl tracking-wide mb-6 text-[#1C1C1C]">
                 {project.title}
               </h2>
 
               <Link
                 to={project.link}
                 className="
-                  inline-block 
-                  border border-[#6b4f3b] 
-                  text-[#6b4f3b] 
-                  px-5 py-2 
-                  rounded-md 
+                  inline-block
+                  border-b
+                  border-[#A1866F]
+                  text-[#A1866F]
+                  tracking-widest
                   text-sm
-                  transition-all
-                  hover:bg-[#6b4f3b] 
-                  hover:text-white
-                  cursor-pointer
+                  pb-1
+                  hover:opacity-70
+                  transition
                 "
               >
-                Explore More
+                VIEW PROJECT
               </Link>
             </div>
 
-            {/* IMAGE SECTION (70%) */}
-            <div className="w-full md:w-[70%]">
-              <a href={project.link} className="block">
-                <div className="overflow-hidden rounded-3xl shadow-xl bg-gray-200 p-1">
+            {/* IMAGE SECTION */}
+            <div className="w-full md:w-[65%]">
+              <Link to={project.link} className="block">
+                <div className="overflow-hidden shadow-lg bg-white">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="
-                      w-full 
-                      h-[420px] 
-                      md:h-[520px] 
-                      lg:h-[580px]
-                      object-cover 
-                      rounded-3xl 
-                      hover:scale-105 
-                      transition-all 
-                      duration-500
+                      w-full
+                      h-[420px]
+                      md:h-[520px]
+                      lg:h-[600px]
+                      object-cover
+                      hover:scale-105
+                      transition
+                      duration-700
+                      ease-out
                     "
                   />
                 </div>
-              </a>
+              </Link>
             </div>
 
           </div>
@@ -75,6 +76,6 @@ const Residential = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Residential
+export default Residential;

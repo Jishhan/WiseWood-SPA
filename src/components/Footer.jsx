@@ -1,74 +1,106 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaInstagram } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-white">
-      <div className="container mx-auto px-5 py-10">
-        <div className="flex justify-around md:flex-row md:justify-around md:items-start gap-5 text-center md:text-left">
+    <footer className="bg-[#F5F3EF] text-[#1C1C1C] border-t border-[#E5DFD7]">
+      <div className="max-w-6xl mx-auto px-6 md:px-16 py-20">
+        <div className="grid md:grid-cols-3 gap-16 text-center md:text-left">
           {/* Logo + Address */}
-          <div className="flex flex-col items-center md:items-start gap-4">
-            {/* Update logo path here */}
-            <a href="/">
+          <div className="space-y-6">
+            <Link to="/">
               <img
-              src="/Images/logoViseWood.png"
-              alt="WiseWood logo"
-              className="w-24 h-auto"
-            />
-            </a>
+                src="/Images/logoViseWood.png"
+                alt="Visewood logo"
+                className="w-28 mx-auto md:mx-0"
+              />
+            </Link>
 
-            <p className="text-gray-700 max-w-xs">
-              Scheme 140, Near Agrawal school, Indore.
+            <p className="text-[#6B6B6B] leading-relaxed text-sm">
+              Scheme 140, Near Agrawal School, <br />
+              Indore, Madhya Pradesh.
             </p>
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-4 justify-center md:justify-start">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:scale-110 transition"
-              >
-                {/* Update icon path here */}
-                <FaInstagram className="text-xl" />
-              </a>
-            </div>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-[#A1866F] hover:opacity-70 transition mr-1.5"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-[#A1866F] hover:opacity-70 transition mr-1.5"
+            >
+              <FaWhatsapp />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-[#A1866F] hover:opacity-70 transition mr-1.5"
+            >
+              <FaFacebook />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-[#A1866F] hover:opacity-70 transition"
+            >
+              <FaLinkedin />
+            </a>
           </div>
 
-          {/* Footer Menu */}
-          <div className="flex justify-center md:justify-start">
-            <ul className="flex flex-col gap-6 text-gray-700 text-base">
+          {/* Navigation */}
+          <div className="space-y-6">
+            <h4 className="text-sm tracking-widest text-[#A1866F]">
+              NAVIGATION
+            </h4>
+
+            <ul className="space-y-4 text-[#6B6B6B]">
               <li>
-                <Link to="/" className="hover:text-[#d30d38] text-[#7D1128] transition">
+                <Link to="/" className="hover:text-[#A1866F] transition">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/aboutUs" className="hover:text-[#7D1128] text-[#7D1128] transition">
+                <Link to="/about-us" className="hover:text-[#A1866F] transition">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="hover:text-[#7D1128] text-[#7D1128] transition">
-                  Blogs
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-[#7D1128] text-[#7D1128] transition">
+                <Link to="/contact" className="hover:text-[#A1866F] transition">
                   Contact
                 </Link>
               </li>
             </ul>
           </div>
-        </div>
-      </div>
 
-      {/* Bottom Strip */}
-      <div className="bg-[#7D1128] py-4">
-        <p className="text-white text-center text-sm pb-1">
-          © WiseWood 2025. All Rights Reserved.
-        </p>
+          {/* Statement */}
+          <div className="space-y-6">
+            <h4 className="text-sm tracking-widest text-[#A1866F]">STUDIO</h4>
+
+            <p className="text-[#6B6B6B] leading-relaxed text-sm max-w-sm mx-auto md:mx-0">
+              We design refined spaces that balance elegance, material richness,
+              and architectural harmony.
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom Line */}
+        <div className="mt-20 pt-8 border-t border-[#E5DFD7] text-center text-sm text-[#6B6B6B]">
+          © 2025 Visewood Studio. All rights reserved.
+        </div>
       </div>
     </footer>
   );

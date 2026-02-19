@@ -4,107 +4,122 @@ const Service = () => {
   const services = [
     {
       title: "Electrical & Plumbing Layouts",
-      desc: "Thoughtfully planned systems integrated seamlessly into your space.",
+      desc: "Precisely engineered systems integrated seamlessly into your interior design.",
     },
     {
       title: "False Ceiling Design",
-      desc: "Modern ceiling concepts that elevate aesthetics and lighting.",
+      desc: "Architectural ceiling concepts that enhance depth, lighting, and ambience.",
     },
     {
       title: "Modular Kitchen",
-      desc: "Functional, ergonomic, and stylish kitchen solutions.",
+      desc: "Elegant, functional kitchens crafted with premium finishes and detailing.",
     },
     {
       title: "Custom Furniture",
-      desc: "Tailored furniture pieces crafted to match your space.",
+      desc: "Bespoke furniture pieces designed exclusively for your space.",
     },
     {
       title: "3D Interior Visualization",
-      desc: "Realistic 3D renders to help you imagine your dream interior.",
+      desc: "High-end 3D renders that bring your vision to life before execution.",
     },
     {
       title: "Space Planning",
-      desc: "Optimized layouts designed for comfort and efficiency.",
+      desc: "Thoughtful layouts that balance comfort, movement, and aesthetics.",
     },
     {
       title: "Wall & Floor Finishes",
-      desc: "Premium materials and textures for elegant interiors.",
+      desc: "Curated textures and materials that elevate spatial experience.",
     },
     {
       title: "Lighting Design",
-      desc: "Smart lighting plans that transform ambiance.",
+      desc: "Layered lighting strategies that transform mood and functionality.",
     },
     {
       title: "Color Consultation",
-      desc: "Perfect color palettes that define your interior style.",
+      desc: "Refined palettes that define tone, warmth, and personality.",
     },
     {
       title: "Project Execution",
-      desc: "End-to-end execution ensuring quality craftsmanship.",
+      desc: "Complete end-to-end execution with precision craftsmanship.",
     },
     {
       title: "Home Renovation",
-      desc: "Complete remodeling solutions tailored to your needs.",
+      desc: "Full-scale remodeling tailored to modern luxury living.",
     },
     {
       title: "Furniture Layouts",
-      desc: "Strategic placement for maximum comfort & space utility.",
+      desc: "Strategic placement ensuring flow, comfort, and proportion.",
     },
   ];
 
   return (
-    <section className=" bg-white mb-10">
-      <div className="w-full h-[500px] overflow-hidden mb-10">
+    <section className="bg-[#F8F6F2] text-[#1E1E1E]">
+
+      {/* HERO */}
+      <div className="relative w-full h-[70vh]">
         <img
           src="/Images/darkSecret-1.png"
-          alt="vrv"
+          alt="Services Banner"
           className="w-full h-full object-cover"
         />
-      </div>
-      <div className="container mx-auto px-4 mb-10">
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-semibold mb-4 text-[#7D1128]">Our Services</h2>
-          <p className="text-lg text-[#7D1128] mb-2">
-            We offer complete end-to-end interior design services across the
-            hospitality, residential, and commercial sectors.
-          </p>
-          <p className="text-xl font-medium text-[#7D1128]">
-            Comprehensive Interior Design Solutions – From Concept to Completion
-          </p>
-          <p className="mt-2 text-[#7D1128]">
-            Our end-to-end design services include:
-          </p>
-        </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <h1 className="text-white text-5xl md:text-6xl font-light tracking-wide">
+            Our Services
+          </h1>
+        </div>
+      </div>
+
+      {/* INTRO */}
+      <div className="max-w-4xl mx-auto px-6 py-24 text-center">
+        <h2 className="text-4xl md:text-5xl font-light mb-8 tracking-wide">
+          Comprehensive Interior Design Solutions
+        </h2>
+
+        <p className="text-lg text-[#555] leading-relaxed">
+          From concept development to final execution, we deliver refined
+          interiors that combine luxury, precision, and timeless design.
+        </p>
+      </div>
+
+      {/* SERVICES LIST — Editorial Layout */}
+      <div className="max-w-6xl mx-auto px-6 pb-24">
+        <div className="grid md:grid-cols-2 gap-x-20 gap-y-16">
+
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="
-                border border-[#7D1128]
-                rounded-2xl
-                p-10
-                shadow-sm
-                flex
-                flex-col
-                justify-center
-                items-center
-                text-center
-                h-[270px]
-              "
-            >
-              <h3 className="text-lg text-[#7D1128] font-semibold mb-4">
+            <div key={index} className="border-b border-[#DDD] pb-8">
+              
+              <h3 className="text-2xl font-light mb-4 tracking-wide">
                 {service.title}
               </h3>
-              <p className="text-[#7D1128] text-sm leading-relaxed">
+
+              <p className="text-[#555] leading-relaxed">
                 {service.desc}
               </p>
+
             </div>
           ))}
+
         </div>
       </div>
+
+      {/* CTA */}
+      <div className="bg-[#1E1E1E] text-white py-20 text-center">
+        <h3 className="text-3xl font-light mb-6">
+          Let’s Build Something Exceptional
+        </h3>
+        <p className="text-sm text-gray-300 mb-8">
+          Connect with us to begin your design journey.
+        </p>
+
+        <a
+          href="/contact"
+          className="inline-block border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition"
+        >
+          CONTACT US
+        </a>
+      </div>
+
     </section>
   );
 };

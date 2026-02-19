@@ -3,157 +3,145 @@ import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
-    <section className="about-us w-full">
-      {/* Hero Section */}
-      <div className="w-full h-[60vh] relative">
+    <section className="w-full bg-[#F8F6F2] text-[#1E1E1E]">
+
+      {/* HERO */}
+      <div className="w-full h-[70vh] relative">
         <img
           src="/Images/darkSecret-1.png"
           alt="About Banner"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h1 className="text-white text-4xl md:text-5xl font-light">
+
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <h1 className="text-white text-5xl md:text-6xl font-light tracking-wide">
             About ViseWood
           </h1>
         </div>
       </div>
 
-      {/* Intro Section */}
-      <div className="container mx-auto px-4 py-16 text-center max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-light text-[#7D1128] mb-6">
-          Crafting Luxury Interiors Since 2019
+      {/* INTRO */}
+      <div className="max-w-4xl mx-auto px-6 py-24 text-center">
+        <h2 className="text-4xl md:text-5xl font-light mb-8 tracking-wide">
+          Crafting Refined Interiors Since 2019
         </h2>
-        <p className="text-lg leading-relaxed text-gray-700">
-          ViseWood is an ultra-luxury interior design studio delivering premium
-          commercial and residential projects across India. We blend creativity,
-          precision, and global design influence to create timeless spaces that
-          reflect elegance and personality.
+
+        <p className="text-lg leading-relaxed text-[#555]">
+          ViseWood is a luxury interior design studio specializing in high-end
+          residential and commercial spaces across India. We merge timeless
+          aesthetics with precision execution — delivering interiors that feel
+          elegant, intentional, and enduring.
         </p>
       </div>
 
-      {/* Owners Section */}
-      <div className="container mx-auto px-4 py-20">
-        <h3 className="text-3xl md:text-4xl font-light text-[#7D1128] text-center mb-16">
-          Meet The Founders
-        </h3>
-
-        <div className="flex flex-col md:flex-row gap-16 items-center">
-          {/* Owner 1 */}
-          <div className="flex-1 flex flex-col items-center text-center">
-            <img
-              src="/Images/owner1.jpg"
-              alt="Founder 1"
-              className="w-64 h-80 object-cover rounded-lg shadow-lg mb-6"
-            />
-
-            <h4 className="text-2xl font-semibold mb-2">Mahesh Jhadhav</h4>
-            <p className="text-[#7D1128] font-medium mb-3">
-              Founder & Creative Director
-            </p>
-
-            <p className="text-gray-600 mb-4 max-w-md">
-              With over 7+ years of experience in luxury interior design, Rahul
-              has led high-end residential and commercial projects across India
-              and internationally. His expertise lies in contemporary and
-              ultra-modern design execution.
-            </p>
-
-            <div className="text-sm text-gray-500 space-y-1">
-              <p>✔ 50+ Projects Completed</p>
-              <p>✔ Specialist in Luxury Modular Furniture</p>
-            </div>
-          </div>
+      {/* FOUNDER SECTION */}
+      <div className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+        
+        <div>
+          <img
+            src="/Images/owner1.jpg"
+            alt="Founder"
+            className="w-full h-[520px] object-cover rounded-2xl"
+          />
         </div>
-      </div>
 
-      {/* Vision & Mission */}
-      <div className="bg-gray-50 py-16 border-t-4 border-b-4 border-[#7D1128]">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-2xl font-semibold text-[#7D1128] mb-4">
-              Our Vision
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              To become a globally recognized interior design brand known for
-              innovation, detail-oriented execution, and luxury transformation
-              of spaces.
-            </p>
-          </div>
+        <div>
+          <h3 className="text-4xl font-light mb-4">
+            Mahesh Jhadhav
+          </h3>
 
-          <div>
-            <h3 className="text-2xl font-semibold text-[#7D1128] mb-4">
-              Our Mission
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              To deliver high-end interiors that combine functionality with
-              aesthetic brilliance, ensuring every client experiences a seamless
-              and premium journey from concept to completion.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Why Choose Us */}
-      <div className="container mx-auto px-4 py-16 text-center">
-        <h3 className="text-3xl font-light text-[#7D1128] mb-12">
-          Why Choose ViseWood?
-        </h3>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="border border-[#7D1128] p-6 rounded-lg hover:shadow-lg transition">
-            <h4 className="font-semibold mb-3">Luxury Design Approach</h4>
-            <p className="text-gray-600 text-sm">
-              We focus on premium aesthetics with curated materials, refined
-              textures, and timeless elegance.
-            </p>
-          </div>
-
-          <div className="border border-[#7D1128] p-6 rounded-lg hover:shadow-lg transition">
-            <h4 className="font-semibold mb-3">Global Design Influence</h4>
-            <p className="text-gray-600 text-sm">
-              Inspired by international trends and cultural diversity, our
-              projects reflect global sophistication.
-            </p>
-          </div>
-
-          <div className="border border-[#7D1128] p-6 rounded-lg hover:shadow-lg transition">
-            <h4 className="font-semibold mb-3">End-to-End Execution</h4>
-            <p className="text-gray-600 text-sm">
-              From concept to handover, we manage every detail ensuring quality
-              and timely delivery.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Team Section */}
-      <div className="bg-[#7D1128] text-white py-16">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h3 className="text-3xl font-light mb-6">Meet The Founders</h3>
-          <p className="leading-relaxed">
-            Founded by a passionate husband-and-wife duo, ViseWood represents a
-            blend of artistic vision and structured execution. Together, they
-            bring international exposure and refined craftsmanship into every
-            project they undertake.
+          <p className="text-sm tracking-widest text-[#A1866F] mb-6 uppercase">
+            Founder & Creative Director
           </p>
+
+          <p className="text-[#555] leading-relaxed mb-6">
+            With over 7 years of experience in premium interior execution,
+            Mahesh leads the creative vision of ViseWood. His design philosophy
+            blends contemporary minimalism with luxurious materiality —
+            resulting in spaces that feel calm, bold, and timeless.
+          </p>
+
+          <div className="text-sm text-[#777] space-y-2">
+            <p>• 50+ Premium Projects Delivered</p>
+            <p>• Specialist in Bespoke Luxury Furniture</p>
+          </div>
+        </div>
+
+      </div>
+
+      {/* VISION & MISSION */}
+      <div className="bg-white py-24">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+
+          <div>
+            <h3 className="text-3xl font-light mb-6">Our Vision</h3>
+            <p className="text-[#555] leading-relaxed">
+              To be recognized as a design studio that transforms everyday
+              spaces into refined environments of elegance and depth.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-light mb-6">Our Mission</h3>
+            <p className="text-[#555] leading-relaxed">
+              To deliver meticulously crafted interiors that balance
+              functionality and luxury — ensuring a seamless experience from
+              concept to completion.
+            </p>
+          </div>
+
         </div>
       </div>
 
-      {/* Call To Action */}
-      <div className="container mx-auto px-4 py-16 text-center">
-        <h3 className="text-2xl font-semibold mb-4">
-          Let’s Design Your Dream Space
+      {/* WHY CHOOSE US */}
+      <div className="max-w-6xl mx-auto px-6 py-24 text-center">
+        <h3 className="text-4xl font-light mb-16">
+          Why Choose ViseWood
         </h3>
-        <p className="mb-6 text-gray-600">
-          Ready to elevate your interiors? Get in touch with us today.
-        </p>
+
+        <div className="grid md:grid-cols-3 gap-12 text-left">
+
+          <div>
+            <h4 className="text-xl mb-4">Luxury Material Selection</h4>
+            <p className="text-[#555] text-sm leading-relaxed">
+              Carefully curated finishes, textures, and details that elevate
+              every space beyond trends.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-xl mb-4">Global Design Perspective</h4>
+            <p className="text-[#555] text-sm leading-relaxed">
+              Inspired by international aesthetics with a refined Indian
+              sensibility.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-xl mb-4">End-to-End Execution</h4>
+            <p className="text-[#555] text-sm leading-relaxed">
+              From design concept to final installation, every detail is
+              handled with precision and care.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="bg-[#1E1E1E] text-white py-20 text-center">
+        <h3 className="text-3xl font-light mb-6">
+          Let’s Create Something Timeless
+        </h3>
+
         <Link
           to="/contact"
-          className="bg-[#7D1128] text-white px-8 py-3 rounded hover:bg-[#6b0f22] transition"
+          className="inline-block mt-4 border border-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-black transition"
         >
-          Contact Us
+          CONTACT US
         </Link>
       </div>
+
     </section>
   );
 };

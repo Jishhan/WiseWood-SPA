@@ -1,48 +1,50 @@
 import React from "react";
 
 const ReferrancePage = ({ title, images }) => {
-  const isGrid = images.length >= 4; // 4 or more => grid
+  const isGrid = images.length >= 4;
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="bg-[#F8F6F2] text-[#1E1E1E]">
 
-        {/* Page Title */}
-        <h1 className="text-4xl font-semibold text-center mb-12">
-          {title}
-        </h1>
+      <div className="max-w-7xl mx-auto px-6 py-24">
 
-        {/* Images Layout */}
+        {/* TITLE */}
+        <div className="text-center mb-20">
+          <h1 className="text-5xl md:text-6xl font-light tracking-wide">
+            {title}
+          </h1>
+        </div>
+
+        {/* IMAGES */}
         <div
           className={
             isGrid
-              ? "grid grid-cols-1 md:grid-cols-2 gap-10"
-              : "flex flex-col gap-16"
+              ? "grid grid-cols-1 md:grid-cols-2 gap-16"
+              : "flex flex-col gap-24"
           }
         >
           {images.map((img, index) => (
-            <div
-              key={index}
-              className="overflow-hidden rounded-3xl shadow-xl bg-gray-200 p-1"
-            >
+            <div key={index} className="group overflow-hidden">
+
               <img
                 src={img}
-                alt={title + index}
+                alt={`${title}-${index}`}
                 className="
                   w-full 
-                  h-[420px] 
-                  md:h-[520px] 
-                  lg:h-[580px]
+                  h-[500px] 
+                  md:h-[650px]
                   object-cover 
-                  rounded-3xl 
-                  hover:scale-105 
-                  transition-all 
-                  duration-500
+                  transition-transform 
+                  duration-700 
+                  ease-out
+                  group-hover:scale-[1.03]
                 "
               />
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
