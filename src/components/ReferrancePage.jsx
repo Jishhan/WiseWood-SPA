@@ -14,7 +14,7 @@ const ReferrancePage = ({ title, images }) => {
             {title}
           </h1>
         </div>
-
+ˇ
         {/* IMAGES */}
         <div
           className={

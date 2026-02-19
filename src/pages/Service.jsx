@@ -3,6 +3,22 @@ import React from "react";
 const Service = () => {
   const services = [
     {
+      title: "3D Interior Visualization",
+      desc: "High-end 3D renders that bring your vision to life before execution.",
+    },
+    {
+      title: "Furniture Layouts",
+      desc: "Strategic placement ensuring flow, comfort, and proportion.",
+    },
+    {
+      title: "Modular Kitchen",
+      desc: "Elegant, functional kitchens crafted with premium finishes and detailing.",
+    },
+    {
+      title: "Space Planning",
+      desc: "Thoughtful layouts that balance comfort, movement, and aesthetics.",
+    },
+    {
       title: "Electrical & Plumbing Layouts",
       desc: "Precisely engineered systems integrated seamlessly into your interior design.",
     },
@@ -11,20 +27,8 @@ const Service = () => {
       desc: "Architectural ceiling concepts that enhance depth, lighting, and ambience.",
     },
     {
-      title: "Modular Kitchen",
-      desc: "Elegant, functional kitchens crafted with premium finishes and detailing.",
-    },
-    {
       title: "Custom Furniture",
       desc: "Bespoke furniture pieces designed exclusively for your space.",
-    },
-    {
-      title: "3D Interior Visualization",
-      desc: "High-end 3D renders that bring your vision to life before execution.",
-    },
-    {
-      title: "Space Planning",
-      desc: "Thoughtful layouts that balance comfort, movement, and aesthetics.",
     },
     {
       title: "Wall & Floor Finishes",
@@ -46,15 +50,11 @@ const Service = () => {
       title: "Home Renovation",
       desc: "Full-scale remodeling tailored to modern luxury living.",
     },
-    {
-      title: "Furniture Layouts",
-      desc: "Strategic placement ensuring flow, comfort, and proportion.",
-    },
   ];
 
   return (
     <section className="bg-[#F8F6F2] text-[#1E1E1E]">
-
+      
       {/* HERO */}
       <div className="relative w-full h-[70vh]">
         <img
@@ -85,21 +85,15 @@ const Service = () => {
       {/* SERVICES LIST — Editorial Layout */}
       <div className="max-w-6xl mx-auto px-6 pb-24">
         <div className="grid md:grid-cols-2 gap-x-20 gap-y-16">
-
           {services.map((service, index) => (
             <div key={index} className="border-b border-[#DDD] pb-8">
-              
               <h3 className="text-2xl font-light mb-4 tracking-wide">
                 {service.title}
               </h3>
 
-              <p className="text-[#555] leading-relaxed">
-                {service.desc}
-              </p>
-
+              <p className="text-[#555] leading-relaxed">{service.desc}</p>
             </div>
           ))}
-
         </div>
       </div>
 
@@ -119,7 +113,6 @@ const Service = () => {
           CONTACT US
         </a>
       </div>
-
     </section>
   );
 };
