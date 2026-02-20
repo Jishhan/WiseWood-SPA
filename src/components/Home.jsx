@@ -148,7 +148,7 @@ const Home = () => {
       </div>
 
       {/* INSTAGRAM + FOOTER */}
-      <div className="px-6 md:px-16 py-12 border-t border-[#E5DFD7] flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="px-6 md:px-16 py-12 border-t border-[#E5DFD7] flex flex-col md:flex-row justify-evenly items-center gap-6">
         <p className="text-[#6B6B6B]">© 2025 Visewood Studio</p>
 
         <Link className="flex items-center gap-2 text-[#A1866F] hover:opacity-70 transition">
