@@ -78,6 +78,11 @@ const Footer = () => {
                   About Us
                 </Link>
               </li>
+                <li>
+                <Link to="/allproject" className="hover:text-[#A1866F] transition">
+                  All Projects
+                </Link>
+              </li>
               <li>
                 <Link to="/contact" className="hover:text-[#A1866F] transition">
                   Contact
