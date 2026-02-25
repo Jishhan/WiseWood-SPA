@@ -63,7 +63,7 @@ const Footer = () => {
 
           {/* Navigation */}
           <div className="space-y-6">
-            <h4 className="text-sm tracking-widest text-[#A1866F]">
+            <h4 className="text-md tracking-widest text-[#A1866F]">
               NAVIGATION
             </h4>
 
@@ -93,9 +93,9 @@ const Footer = () => {
 
           {/* Statement */}
           <div className="space-y-6">
-            <h4 className="text-sm tracking-widest text-[#A1866F]">STUDIO</h4>
+            <h4 className="text-md tracking-widest text-[#A1866F]">STUDIO</h4>
 
-            <p className="text-[#6B6B6B] leading-relaxed text-sm max-w-sm mx-auto md:mx-0">
+            <p className="text-[#6B6B6B] leading-relaxed text-md max-w-sm mx-auto md:mx-0">
               We design refined spaces that balance elegance, material richness,
               and architectural harmony.
             </p>
@@ -103,7 +103,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Line */}
-        <div className="mt-20 pt-8 border-t border-[#E5DFD7] text-center text-sm text-[#6B6B6B]">
+        <div className="mt-20 pt-8 border-t border-[#E5DFD7] text-center text-md text-[#6B6B6B]">
           © 2025 Visewood Studio. All rights reserved.
         </div>
       </div>

@@ -8,7 +8,7 @@ const Header = () => {
   const dropdownRef = useRef(null);
 
   const linkStyle =
-    "relative text-sm tracking-wide text-[#1C1C1C] hover:text-[#A1866F] transition";
+    "relative text-md tracking-wide text-[#1C1C1C] hover:text-[#A1866F] transition";
 
   const activeStyle = "text-[#A1866F]";
 

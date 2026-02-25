@@ -25,7 +25,7 @@ import PrivateRoom from './pages/PrivateRoom'
 const App = () => {
   return (
     <>
-     <ScrollToTop />  
+      <ScrollToTop />  
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
