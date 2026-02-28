@@ -1,5 +1,4 @@
 import React from "react";
-import ReferrancePage from "../components/ReferrancePage";
 
 const DocCabin = () => {
   return (
